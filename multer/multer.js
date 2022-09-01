@@ -2,7 +2,7 @@ const multer  = require('multer')
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         
-      cb(null, '../frontend/src/img/avatar')
+      cb(null, '../socket_telegrom_frontend/src/img/avatar')
     },
     filename: function (req, file, cb) {
        const filename = file.originalname;
