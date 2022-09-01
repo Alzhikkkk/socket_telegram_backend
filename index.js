@@ -20,7 +20,7 @@ const server = app.listen(process.env.PORT , () => console.log(`Server is listen
 
 const io = socket(server, {
     cors: {
-      origin: "*",
+      origin: "http://telegram.alzhik.site",
       methods: ["GET", "POST"],
       credentials: true
     },
