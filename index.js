@@ -18,9 +18,8 @@ const server = app.listen(process.env.PORT , () => console.log(`Server is listen
 
 const io = socket(server, {
     cors: {
-      origin: "http://telegram.alzhik.site:3010",
+      origin: "http://localhost:3000",
       methods: ["GET", "POST"],
-      allowedHeaders: ["my-custom-header"],
       credentials: true
     },
   });
