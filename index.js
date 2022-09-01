@@ -14,14 +14,13 @@ app.use(cors(corsOptionsDelegate))
 
 app.use(require('./routes'))
 
-// const server = app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`))
-const server = require('http').createServer(app)
+const server = app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`))
 
 
 
 const io = socket(server, {
     cors: {
-      origin: "*",
+      origin: "http://telegram.alzhik.site",
       methods: ["GET", "POST"],
       credentials: true
     },
