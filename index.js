@@ -21,7 +21,7 @@ const server = require('http').createServer(app)
 
 const io = socket(server, {
     cors: {
-      origin: "http://telegram.alzhik.site",
+      origin: "*",
       methods: ["GET", "POST"],
       credentials: true
     },
