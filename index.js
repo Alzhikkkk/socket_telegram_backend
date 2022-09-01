@@ -14,7 +14,10 @@ app.use(cors(corsOptionsDelegate))
 
 app.use(require('./routes'))
 
-const server = app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`))
+// const server = app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`))
+const server = require('http').createServer(app)
+
+
 
 const io = socket(server, {
     cors: {
@@ -24,7 +27,7 @@ const io = socket(server, {
     },
   });
 
-  
+  server.listen(process.env.PORT);
   
   global.onlineUsers = new Map();
   io.on("connection", (socket) => {
