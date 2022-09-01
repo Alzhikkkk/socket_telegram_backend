@@ -26,7 +26,7 @@ const io = socket(server, {
     },
   });
 
-  server.listen(process.env.PORT);
+
   
   global.onlineUsers = new Map();
   io.on("connection", (socket) => {
